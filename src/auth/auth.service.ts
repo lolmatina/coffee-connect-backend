@@ -151,8 +151,8 @@ export class AuthService {
             email: user.email,
             role: user.role as UserRole,
             UserProfile: {
-                firstName: user.UserProfile[0].firstName,
-                lastName: user.UserProfile[0].lastName
+                firstName: user.UserProfile?.[0]?.firstName,
+                lastName: user.UserProfile?.[0]?.lastName
             },
             createdAt: user.createdAt,
             updatedAt: user.updatedAt
@@ -227,7 +227,7 @@ export class AuthService {
             id: newUser.id,
             email: newUser.email,
             role: newUser.role,
-            UserProfile: newUser.UserProfile[0]
+            UserProfile: newUser.UserProfile?.[0]
         };
     }
 
